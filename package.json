@@ -7,13 +7,50 @@
     "test": "node ./example/index.js",
     "release": "release-it"
   },
-  "author": "francesco.clementi1992@gmail.com",
-  "license": "ISC",
+  "author": "Francesco Clementi <francesco.clementi1992@gmail.com> (https://github.com/francesco-clementi-92)",
   "dependencies": {
     "handlebars": "^4.7.8",
     "puppeteer": "^21.5.2"
   },
   "devDependencies": {
     "release-it": "^17.0.0"
+  },
+  "homepage": "https://github.com/francesco-clementi-92/jshtml-to-pdf",
+  "keywords": [
+    "pdf",
+    "pdf",
+    "node",
+    "pdf",
+    "html2pdf",
+    "htmltopdf",
+    "Pdf generator",
+    "node pdf",
+    "npm node pdf",
+    "pdf node",
+    "node pdf npm",
+    "node pdf generator from html",
+    "node pdf generator",
+    "node js api pdf",
+    "node pdf converter",
+    "node pdf create",
+    "node pdf export",
+    "node express pdf",
+    "node pdf from html",
+    "node generate pdf from html",
+    "node generate pdf report",
+    "node get pdf file",
+    "node js pdf generation",
+    "node js pdf generator module",
+    "node pdf html",
+    "pdf in node js",
+    "node pdf js"
+  ],
+  "repository": "https://github.com/francesco-clementi-92/jshtml-to-pdf/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/francesco-clementi-92/jshtml-to-pdf/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
