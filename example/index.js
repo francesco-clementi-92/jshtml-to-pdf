@@ -3,6 +3,12 @@ const { create } = require("../index");
 
 const html = readFileSync(__dirname + "/example.html", "utf8");
 
+const options = {
+  format: "A4",
+  orientation: "portrait",
+  border: "10mm",
+};
+
 const document = {
   html: html,
   data: {
@@ -10,4 +16,4 @@ const document = {
   },
 }
 
-create(document).then(doc => writeFileSync(__dirname + '/test.pdf', doc));
+create(document, options).then(doc => writeFileSync(__dirname + '/test.pdf', doc));

@@ -37,7 +37,7 @@ const create = function (doc, options) {
     }
     // Compiles a template
     const html = Handlebars.compile(doc.html)(doc.data);
-    pdf.create(html).toBuffer(function(err, buffer){
+    pdf.create(html, options).toBuffer(function(err, buffer){
       resolve(buffer);
     });
   })};
