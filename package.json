@@ -1,6 +1,6 @@
 {
   "name": "jshtml-to-pdf",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Module to generate pdf from html and js",
   "main": "index.js",
   "scripts": {
