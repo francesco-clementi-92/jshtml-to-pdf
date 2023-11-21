@@ -1,5 +1,7 @@
+
 const Handlebars = require("handlebars");
-const puppeteer = require('puppeteer');
+const pdf = require('html-pdf');
+
 
 Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
   switch (operator) {
@@ -28,20 +30,17 @@ Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
   }
 });
 
-var create = function (document, options) {
+const create = function (doc, options) {
   return new Promise(async (resolve, reject) => {
-    if (!document || !document.html || !document.data) {
+    if (!doc || !doc.html || !doc.data) {
       reject(new Error("Some, or all, options are missing."));
     }
     // Compiles a template
-    var html = Handlebars.compile(document.html)(document.data);
-    const browser = await puppeteer.launch({headless: 'new'});
-    const page = await browser.newPage();
-    await page.setContent(html);
-    const pdf = await page.pdf({ format: 'A4' });
-    await browser.close();
-    resolve(pdf);
-  });
-};
+    const html = Handlebars.compile(doc.html)(doc.data);
+    pdf.create(html).toBuffer(function(err, buffer){
+      resolve(buffer);
+    });
+  })};
+
 
 module.exports.create = create;
