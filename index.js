@@ -28,7 +28,7 @@ Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
   }
 });
 
-const create = function (document, options) {
+const create = async function (document, options) {
   return new Promise((resolve, reject) => {
     if (!document || !document.html || !document.data) {
       reject(new Error("Some, or all, options are missing."));
