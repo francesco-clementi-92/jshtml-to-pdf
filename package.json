@@ -15,7 +15,6 @@
   "devDependencies": {
     "release-it": "^17.0.0"
   },
-  "bundleDependencies": true,
   "homepage": "https://github.com/francesco-clementi-92/jshtml-to-pdf",
   "keywords": [
     "pdf",
