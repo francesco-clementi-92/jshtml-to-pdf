@@ -52,5 +52,9 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "handlebars": "^4.7.8",
+    "puppeteer": "^21.5.2"
   }
 }
