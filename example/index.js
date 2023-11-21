@@ -14,6 +14,17 @@ const document = {
   data: {
     customer: {customerCode: '12345', name: 'Francesco', surname: 'Clementi', fiscalCode: '123456678'},
   },
+  type: "buffer"
 }
 
-create(document, options).then(doc => writeFileSync(__dirname + '/test.pdf', doc));
+async function generate(){
+  try {
+    const doc = await create(document, options);
+    writeFileSync(__dirname + '/test.pdf', doc);
+  } catch(err) {
+    console.error(err);
+    throw new Error(err);
+  }
+}
+
+generate();
