@@ -1,7 +1,4 @@
-const { readFileSync, writeFileSync } = require("fs");
-
-
-var Handlebars = require("handlebars");
+const Handlebars = require("handlebars");
 const puppeteer = require('puppeteer');
 
 Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
