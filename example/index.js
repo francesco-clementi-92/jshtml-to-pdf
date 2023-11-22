@@ -1,5 +1,5 @@
 const { readFileSync, writeFileSync } = require("fs");
-const { create } = require("../index");
+const { create } = require("../dist/index");
 
 const html = readFileSync(__dirname + "/example.html", "utf8");
 

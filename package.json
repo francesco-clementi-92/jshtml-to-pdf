@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./example/index.js",
+    "build": "tsc",
     "release": "release-it"
   },
   "author": "Francesco Clementi <francesco.clementi1992@gmail.com> (https://github.com/francesco-clementi-92)",
@@ -13,7 +14,9 @@
     "html-pdf": "^3.0.1"
   },
   "devDependencies": {
-    "release-it": "^17.0.0"
+    "@types/html-pdf": "^3.0.3",
+    "release-it": "^17.0.0",
+    "typescript": "^5.3.2"
   },
   "homepage": "https://github.com/francesco-clementi-92/jshtml-to-pdf",
   "keywords": [

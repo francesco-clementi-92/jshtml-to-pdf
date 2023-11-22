@@ -1,7 +1,25 @@
-const Handlebars = require("handlebars");
-const pdf = require("html-pdf");
+import Handlebars from "handlebars";
+import pdf from "html-pdf";
 
-Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
+export interface Document {
+  data: any;
+  html: string;
+  type?: 'buffer' | 'stream';
+  path?: 'string';
+}
+
+export interface IfCondOptions {
+  fn: (context: any) => string;
+  inverse: (context: any) => string;
+}
+
+Handlebars.registerHelper("ifCond", function (
+  this: typeof Handlebars.registerHelper,
+  v1: string, 
+  operator: string, 
+  v2: string, 
+  options: IfCondOptions
+) {
   switch (operator) {
     case "==":
       return v1 == v2 ? options.fn(this) : options.inverse(this);
@@ -28,7 +46,7 @@ Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
   }
 });
 
-const create = async function (document, options) {
+const create = async function (document: Document, options: any) {
   return new Promise((resolve, reject) => {
     if (!document || !document.html || !document.data) {
       reject(new Error("Some, or all, options are missing."));
