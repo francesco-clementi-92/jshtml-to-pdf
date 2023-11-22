@@ -6,7 +6,7 @@ const html = readFileSync(__dirname + "/example.html", "utf8");
 const options = {
   format: "A4",
   orientation: "portrait",
-  border: "10mm",
+  border: "10mm"
 };
 
 const document = {

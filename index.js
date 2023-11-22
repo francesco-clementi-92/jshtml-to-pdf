@@ -33,6 +33,24 @@ const create = async function (document, options) {
     if (!document || !document.html || !document.data) {
       reject(new Error("Some, or all, options are missing."));
     }
+
+    // Fix nodejs > 14
+    if (!options) {
+      options = {
+        childProcessOptions: {
+          env: {
+            OPENSSL_CONF: "/dev/null",
+          }
+        }
+      }
+    } else {
+      options.childProcessOptions = {
+        env: {
+          OPENSSL_CONF: "/dev/null",
+        }
+      }
+    }
+
     // Compiles a template
     const html = Handlebars.compile(document.html)(document.data);
 
